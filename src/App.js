@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Container className="tweets" maxWidth={false}>
         <Header />
+        <SendTweet />
       </Container>
     </div>
   );
