@@ -3,6 +3,7 @@ import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import moment from 'moment';
 import ModalContainer from '../ModalContainer';
+import FormSendTweet from '../FormSendTweet';
 
 import "./SendTweet.scss";
 
@@ -24,7 +25,7 @@ export default function SendTweet() {
       </Fab>
 
       <ModalContainer isOpenModal={isOpenModal} handleClose={handleClose}>
-        <p>Modal Content</p>
+        < FormSendTweet />
       </ModalContainer>
     </div>
   )
