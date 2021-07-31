@@ -8,7 +8,9 @@ import { TWEETS_STORAGE } from '../../utils/contants';
 
 import "./SendTweet.scss";
 
-export default function SendTweet() {
+export default function SendTweet(props) {
+  const { setToastProps } = props;
+
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleOpen = () => {
@@ -26,12 +28,12 @@ export default function SendTweet() {
     let allTweetsArray = [];
 
     if(!name || !tweet) {
-      console.log("WARNING...")
+      setToastProps({open: true, text: "The fields are required"});
     } else {
       formValue.time = moment();
       allTweetsArray.push(formValue);
       localStorage.setItem(TWEETS_STORAGE, JSON.stringify(allTweetsArray));
-      console.log("Sent tweet successfully");
+      setToastProps({open: true, text: "Sent tweet successfully"})
       handleClose();
     }
     allTweetsArray = [];
