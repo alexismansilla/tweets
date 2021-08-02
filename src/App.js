@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Container className="tweets" maxWidth={false}>
         <Header />
-        <SendTweet setToastProps={setToastProps}/>
+        <SendTweet setToastProps={setToastProps} allTweets={allTweets}/>
         <Snackbar anchorOrigin={{ vertical: "top", horizontal: "right" }}
                   open={toastProps.open}
                   autoHideDuration={6000}

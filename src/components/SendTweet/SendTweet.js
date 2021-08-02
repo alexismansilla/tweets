@@ -9,7 +9,7 @@ import { TWEETS_STORAGE } from '../../utils/contants';
 import "./SendTweet.scss";
 
 export default function SendTweet(props) {
-  const { setToastProps } = props;
+  const { setToastProps, allTweets } = props;
 
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -26,6 +26,10 @@ export default function SendTweet(props) {
 
     const { name, tweet } = formValue;
     let allTweetsArray = [];
+
+    if (allTweets) {
+      allTweetsArray = allTweets;
+    }
 
     if(!name || !tweet) {
       setToastProps({open: true, text: "The fields are required"});
