@@ -1,10 +1,11 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import Tweets from '../Tweets';
 
 import './ListTweets.scss';
 
 export default function ListTweets(props) {
-  const { allTweets } = props;
+  const { allTweets, deleteTweet } = props;
 
   if (!allTweets || allTweets.length === 0) {
     return (
@@ -19,7 +20,7 @@ export default function ListTweets(props) {
       {
         allTweets.map((tweet, index) => (
           <Grid key={index} item xs={4}>
-            Tweet!
+            <Tweets tweet={tweet} index={index} deleteTweet={deleteTweet}/>
           </Grid>
         ))
       }
