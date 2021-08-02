@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Snackbar } from '@material-ui/core';
 import Header from './components/Header';
 import SendTweet from './components/SendTweet';
+import ListTweets from './components/ListTweets';
 
 import { TWEETS_STORAGE } from './utils/contants';
 
@@ -16,13 +17,12 @@ function App() {
     setAllTweets(allTweetsArray);
   }, []);
 
-  console.log(allTweets);
-
   return (
     <div className="App">
       <Container className="tweets" maxWidth={false}>
         <Header />
         <SendTweet setToastProps={setToastProps} allTweets={allTweets}/>
+        <ListTweets allTweets={allTweets}/>
         <Snackbar anchorOrigin={{ vertical: "top", horizontal: "right" }}
                   open={toastProps.open}
                   autoHideDuration={6000}
